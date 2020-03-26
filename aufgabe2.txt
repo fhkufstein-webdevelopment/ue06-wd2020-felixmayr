@@ -1,0 +1,30 @@
+# Welche URL wird aufgerufen wenn Sie versuchen sich anzumelden?
+http://localhost/baseproject/login
+
+# Welche „Method“ wird im Reiter Network angezeigt?
+POST
+
+# Welche URL wird aufgerufen wenn Sie versuchen sich zu registrieren?
+http://localhost/baseproject/login
+
+# Welche „Method“ wird im Reiter Network angezeigt?
+POST
+
+# Versuchen Sie einen Nutzer mit dem Namen test zu registrieren – wie ist der Response? (Chrome Entwicklertools: Network -> klick bei Name auf login -> Response)
+{"result":false,"data":{"errorFields":{"name":"Benutzername ist schon vorhanden!"}}}
+
+# Melden Sie sich an:
+Benutzername: test
+Passwort: testpassword
+
+# Legen Sie eine Neue Adresse an – wie ist hier die Method? Wie lautet der Name/aufgerufene URL?
+http://localhost/baseproject/api/address/ - POST
+
+# Bearbeiten Sie eine Adresse und klicken Sie auf speichern – wie ist hier die Method? (evtl. Haken bei „Preserve log“ setzen) Wie lautet hier der Name/aufgerufene URL?
+http://localhost/baseproject/api/address/ - PUT
+
+# Löschen Sie die neu angelegte Adresse – wie ist hier die Method? Wie lautet hier der Name/aufgerufene URL?
+http://localhost/baseproject/api/address/ - DELETE
+
+# Probieren Sie einmal eine eigene Route anzulegen. Beispielsweise, dass Sie eine zusätzliche url für den Login definieren (z.B. /anmelden) – der LoginController soll aber weiterhin verwendet werden. Dies können Sie in der Datei includes/routes.php vornehmen. Rufen Sie anschließend die URL auf. Z.B::
+$route['/anmelden'] = array('controller' => 'LoginController', 'uniqueName' => 'index');
